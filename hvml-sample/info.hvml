@@ -1,0 +1,35 @@
+<!DOCTYPE hvml>
+<hvml target="html" script="python" lang="en">
+    <head>
+        <title>信息查询表</title>
+        <init as="info" uniquely by="name">
+            [
+                { "name": "Bob", "age": 19, "sex": 'M', "class": "student" },
+                { "name": "Alice", "age": 18, "sex": 'F', "class": "student" },
+                { "name": "Flager", "age": 20, "sex": 'M', "class": "student teacher" }
+            ]
+        </init>
+        <init as="current-id">
+            0
+        </init>
+    </head>
+
+    <body>
+        <div id="choose">
+            <archetype id="button">
+                <li class=$?.class>$?.name</li>
+            </archetype>
+        </div>
+        <div id="show">
+            <archetype>
+                <div class="name">$info[$current-id].name</div>
+                <br />
+                <div class="age">$info[$current-id].age</div>
+                <br />
+                <div class="sex">$info[$current-id].sex</div>
+                <br />
+                <div class="position">$info[$current-id].class</div>
+            </archetype>
+        </div>
+    </body>
+</hvml>
